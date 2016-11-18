@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <div ng-controller="ManageBeaconCtrl">
+
+        <h1>Manage beacon data</h1>
+        <form>
+          <table>
+          <th>BeaconID</th>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Year</th>
+         <!-- <th>Description</th>
+          <th>Image url</th>
+          <th>Location (room)</th>-->
+          <th>Edit</th>
+          <th>Delete</th>
+      		<tr ng-repeat="x in objects">
+
+          <td>{{x.id_beacon}}</td>
+          <!--<td><input ng-model="x.name" value={{x.name}}/></td>
+          <td><input ng-model="x.author" value={{x.author}}/></td>
+          <td><input ng-model="x.year" value={{x.year}}/></td>
+         <td><input ng-model="x.description" value={{x.description}}/></td>
+          <td><input ng-model="x.image_url" value={{x.image_url}}/></td>
+          <td><input ng-model="x.showroom" value={{x.showroom}}/></td>-->
+		<td style = "width: 200px">
+			<div class="large-12 columns">
+				<p ng-model="x.name" >{{x.name}}</p>
+			</div>
+		</td>
+		<td style = "width: 200px">
+			<div class="large-12 columns">
+				<p ng-model="x.author">{{x.author}}</p>
+			</div>
+		</td>
+		<td style = "width: 100px">
+			<div class="large-12 columns">
+				<p ng-model="x.year">{{x.year}}</p>
+			</div>
+		</td>
+		<!--<td style = "width: 350px">
+			<div class="large-12 columns">
+				<p ng-model="x.description">{{x.description}}</p>
+			</div>
+		</td>
+		<td>
+			<div class="large-12 columns">
+				<p ng-model="x.image_url">{{x.image_url}}</p>
+			</div>
+		</td>
+		<td>
+			<div class="large-12 columns">
+				<p ng-model="x.showroom">{{x.showroom}}</p>
+			</div>
+		</td>-->
+          <!--<td><a style= "font-size: x-large" class="step fi-save" type="Submit" ng-click="updateBeacon(x.id_beacon, x.name, x.author, x.year, x.description, x.image_url, x.showroom)" value="Edit"/></td>-->
+		  <td> <a style= "font-size: x-large" class = "step fi-save" href="#/ManageBeaconData/#" data-reveal-id={{x.id_name}}></a></td>
+          <td><a style= "font-size: x-large" class = "step fi-trash" type="Submit" ng-click="deleteBeacon(x.id_beacon)" value="Delete"/></td>
+          </tr>
+          </table>
+          </form>
+		</div>
+    </body>
+</html>

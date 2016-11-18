@@ -1,0 +1,82 @@
+body {
+	background-color: black;
+	height: 100%;
+	margin: 0
+}
+
+#testi{
+	width:80%;
+	background-color:white;
+	float:right;
+}
+#sidebar{
+	width:10%;
+	height:95%;
+	background-color:#333333;
+	float:left;
+}
+#back {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#back img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+#title{
+	color: white;
+}
+
+#img{
+	height: 100%;
+	width: 100%;
+}
+
+#content{
+	height:auto;
+	width:auto;
+}
+
+@media only screen and (min-width: 650px) {
+   #img {
+	float: left;
+	position: static; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100px;
+  min-height: auto;
+  max-width: 400px;
+  max-height: auto;
+    }
+	
+	#content{
+		height: 600px;
+		width: auto;
+	}
+	#accordionDiv{
+		width:70%;
+		margin: auto;
+	}
+}
+#view{
+	background-color: white;
+	width: 90%;
+	height:95%;
+	position: relative;
+	float: right;
+	padding-top: 3px;
+	padding-right: 2%;
+	padding-left: 2%;
+}

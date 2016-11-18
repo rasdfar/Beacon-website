@@ -1,0 +1,7 @@
+create table users(
+email varchar(40),
+password varchar(30),
+primary key (email)
+);
+
+insert into users values("admin@admin.com","YWRtaW4=");

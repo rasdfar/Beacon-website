@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <div ng-controller="BeaconCtrl">
+        <h1>Lisää näyttelykappaleita</h1>
+        	<form method="POST" style="padding-right: 40%">
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Give beacon ID
+					<input type="text" placeholder="" ng-model="id_beacon" class="form-control" id="id_beacon"/>
+				  </label>
+				</div>
+			  </div>
+
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Give name of the art
+					<input type="text" placeholder="" ng-model="name" class="form-control" id="name" />
+				  </label>
+				</div>
+			  </div>
+
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Give name of the author
+					<input type="text" placeholder="" ng-model="author" class="form-control" id="author"/>
+				  </label>
+				</div>
+			  </div>
+
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Give year that the art was made
+					<input type="text" placeholder="" ng-model="year" class="form-control" id="year"/>
+				  </label>
+				</div>
+			  </div>
+
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Give description for the art
+					<textarea type="text" placeholder="" ng-model="description" class="form-control" id="description" />
+				  </label>
+				</div>
+			  </div>
+			<p>Alla olevat hardcoded</p>
+			<p><input ng-model="image_url" class="form-control" id="description" placeholder="Anna kuvan url"></input></p>
+			<p><input ng-model="showroom" class="form-control" id="description" placeholder="Anna näyttelyhuone (A, B, 1, 2...)"></input></p>
+			<input class="button"  href="#/EditBeaconData" type="Submit" ng-click="addNewBeacon()" value="Send"/>
+			</div>
+			     
+			<!--
+      		<p><input ng-model="id_beacon" class="form-control" id="id_beacon" placeholder="Anna Beaconin Id"></input></p>
+      		<p><input ng-model="name" class="form-control" id="name" placeholder="Anna näyttelykappaleen nimi"></input></p>
+			<p><input ng-model="author" class="form-control" id="author" placeholder="Anna tekijä"></input></p>
+			<p><input ng-model="year" class="form-control" id="year" placeholder="Anna tekovuosi"></input></p>
+			<p><input ng-model="description" class="form-control" id="description" placeholder="Anna kuvaus"></input></p>
+      <p>Alla olevat hardcoded</p>
+      <p><input ng-model="image_url" class="form-control" id="description" placeholder="Anna kuvan url"></input></p>
+      <p><input ng-model="showroom" class="form-control" id="description" placeholder="Anna näyttelyhuone (A, B, 1, 2...)"></input></p>
+			<input  href="#/EditBeaconData" type="Submit" ng-click="addNewBeacon()" value="Send"/>
+      		<p>{{data}}</p>-->
+      		</form>
+    </body>
+</html>

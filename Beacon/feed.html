@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <title>Beacon</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+        
+         <script src="js/mainmodule.js"></script>
+        <script src="js/AddBeaconDataController.js"></script>
+        <script src="js/ManageBeaconsController.js"></script>
+        <script src="js/maincontroller.js"></script>
+
+        <script src="js/homecontroller.js"></script>
+		
+		<link rel="stylesheet" href="css/foundation.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+		<script src="js/vendor/modernizr.js"></script>
+        
+    </head>
+    <body ng-app="showroom" onload="feedLoad()">
+	<!--top bar-->
+	<div>
+	<nav class="top-bar" data-topbar role="navigation" >
+	  <ul class="title-area">
+		<li class="name">
+		  <h1 id="title">Beacon</h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+	  </ul>
+	  <section class="top-bar-section">
+		<!-- Right Nav Section -->
+		<ul class="right">
+			<li class="active"><a href="#" onclick="deleteCookie()">Logout</a></li>
+		</ul>
+	  </section>
+	</nav>
+	</div>
+	<!-- side bar-->
+	<div id="sidebar">
+		<ul class="side-nav">
+		<li class="divider"></li>
+		<li><a href="#/">Home</a></li>
+		<li class="divider"></li>
+		<li><a href="#/ManageBeaconData">Manage beacon data</a></li>
+		<li class="divider"></li>
+		<li><a href="#/AddBeaconData">Add beacon</a></li>
+		<li class="divider"></li>
+		</ul>
+	</div>
+		<!--view-->
+	<div id = "view">
+	<div id = "msg"></div>
+	<div data-alert class="alert-box" style= "display: none"><!--emty for a reason-->
+	Welcome
+	<a href="" class="close">&times;</a>
+	</div>
+		<div ng-view></div>
+	</div>
+	<!--manage modals-->
+	<div ng-controller="ManageBeaconCtrl">
+	<div ng-repeat = "x in objects">
+			<div id={{x.id_name}} class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+			<form>
+					<td>{{x.id_beacon}}</td>
+							<td style = "width: 200px">
+			<div class="large-12 columns">
+				<label>Name of the art</label>
+				<textarea ng-model="x.name" placeholder={{x.name}}></textarea>
+			</div>
+		</td>
+		<td style = "width: 200px">
+			<div class="large-12 columns">
+				<label>Author of the art</label>
+				<textarea ng-model="x.author" placeholder={{x.author}}></textarea>
+			</div>
+		</td>
+		<td style = "width: 100px">
+			<div class="large-12 columns">
+						<label>Year art was made</label>
+				<textarea ng-model="x.year" placeholder={{x.year}}></textarea>
+			</div>
+		</td>
+		<td style = "width: 350px">
+			<div class="large-12 columns">
+						<label>Description for the art</label>
+				<textarea ng-model="x.description" placeholder={{x.description}}></textarea>
+			</div>
+		</td>
+		<td>
+			<div class="large-12 columns">
+						<label>Image URL</label>
+				<textarea ng-model="x.image_url" placeholder={{x.image_url}}></textarea>
+			</div>
+		</td>
+		<td>
+			<div class="large-12 columns">
+						<label>Show room</label>
+				<textarea ng-model="x.showroom" placeholder={{x.showroom}}></textarea>
+			</div>
+		</td>
+
+			</form>
+			<a class="button" type="Submit" ng-click="updateBeacon(x.id_beacon, x.name, x.author, x.year, x.description, x.image_url, x.showroom)">Save</a>
+			<a class = "button" type="Submit" ng-click="deleteBeacon(x.id_beacon)">Delete</a>
+			  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+			</div>
+
+	</div>
+	</div>
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/foundation/foundation.js"></script>
+	<script src="js/foundation/foundation.topbar.js"></script>
+	<script src="js/foundation/foundation.reveal.js"></script>
+	<script src="js/foundation/foundation.abide.js"></script>
+	<script src="js/foundation/foundation.alert.js"></script>
+	<script src="js/script.js"></script>
+	
+	<script>
+		$(document).foundation();
+	</script>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon</title>
+    <link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+	<div id="back">
+		<img src="img/beacon.jpg"></img>
+	</div>
+    <nav class="top-bar" data-topbar role="navigation" >
+	  <ul class="title-area">
+		<li class="name">
+		  <h1 id="title">Beacon</h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+		<!-- Right Nav Section -->
+		<ul class="right">
+			<li><a href="#" data-reveal-id="RegisterModal">Register</a></li>
+			<li class="active"><a href="#" data-reveal-id="LogInModal">Login</a></li>
+		</ul>
+	  </section>
+	</nav>
+
+<!--Login Modal-->
+<div id="LogInModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	<h2>Login</h2>
+	<div data-alert class="alert-box" style= "display: none"><!--emty for a reason-->
+	Welcome
+	<a href="#" class="close">&times;</a>
+	</div>
+	<div id = "alert"></div>
+	<form data-abide>
+		<div class="large-12 columns">
+			<label>Email <small>required</small>
+			<input id="email" type="email" required>
+			</label>
+			<small class="error">An email address is required.</small>
+		</div>
+		<div class="large-12 columns">
+			<label for="password">Password <small>required</small>
+				<input type="password" id="password" placeholder="" name="password" required>
+			</label>
+			<small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+      </div>
+	</form>
+	<a class="button" type="submit" onclick="logIn()">Login</a>
+	<a href="#" data-reveal-id="RegisterModal" class="secondary button">Register</a>
+	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<!-- Register Modal-->
+<div id="RegisterModal" class="reveal-modal" data-reveal aria-labelledby="secondModalTitle" aria-hidden="true" role="dialog">
+	<h2>Register</h2>
+	<div id= "registerError"></div>
+	<form data-abide>
+		<div class="large-12 columns">
+			<label>Email <small>required</small>
+			<input type="email" id = "regEmail" required>
+			</label>
+			<small class="error">An email address is required.</small>
+		</div>
+		<div class="large-12 columns">
+        <label for="password">Password <small>required</small>
+          <input type="password" id="regPassword" placeholder="" name="password" required>
+        </label>
+        <small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+      </div>
+      <div class="large-12 columns">
+        <label for="confirmPassword">Confirm Password <small>required</small>
+          <input type="password" id="confirmPassword" placeholder="" name="confirmPassword" required data-equalto="password">
+        </label>
+        <small class="error">Passwords must match.</small>
+      </div>
+	</form>
+	<a href="#" class="button" type="submit" onclick = "register()">Register</a>
+	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+    <script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/foundation/foundation.js"></script>
+	<script src="js/foundation/foundation.topbar.js"></script>
+	<script src="js/foundation/foundation.reveal.js"></script>
+	<script src="js/foundation/foundation.abide.js"></script>
+	<script src="js/foundation/foundation.alert.js"></script>
+	<script src="js/script.js"></script>
+	
+	<script>
+		$(document).foundation();
+		
+		setTimeout(function(){
+        $(".alert-box a.close").click();
+		}, 7000);
+	</script>
+  </body>
+</html>
